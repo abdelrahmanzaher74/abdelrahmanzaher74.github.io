@@ -1,10 +1,19 @@
+// ==============================
 // Sticky Header
+// ==============================
+
 window.addEventListener("scroll", () => {
+
     const header = document.querySelector("header");
+
     header.classList.toggle("sticky", window.scrollY > 50);
+
 });
 
+// ==============================
 // Active Navigation
+// ==============================
+
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
 
@@ -14,10 +23,12 @@ window.addEventListener("scroll", () => {
 
     sections.forEach(section => {
 
-        const sectionTop = section.offsetTop - 150;
+        const sectionTop = section.offsetTop - 180;
 
-        if (scrollY >= sectionTop) {
+        if (window.scrollY >= sectionTop) {
+
             current = section.getAttribute("id");
+
         }
 
     });
@@ -36,8 +47,11 @@ window.addEventListener("scroll", () => {
 
 });
 
-// Fade Animation
-const observer = new IntersectionObserver(entries => {
+// ==============================
+// Scroll Animation
+// ==============================
+
+const observer = new IntersectionObserver((entries) => {
 
     entries.forEach(entry => {
 
@@ -49,9 +63,13 @@ const observer = new IntersectionObserver(entries => {
 
     });
 
+},{
+
+    threshold:0.15
+
 });
 
-document.querySelectorAll("section").forEach(section => {
+sections.forEach(section=>{
 
     section.classList.add("hidden");
 
@@ -59,30 +77,79 @@ document.querySelectorAll("section").forEach(section => {
 
 });
 
+// ==============================
 // Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+// ==============================
 
-    anchor.addEventListener("click", function (e) {
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+    anchor.addEventListener("click",function(e){
 
         e.preventDefault();
 
         document.querySelector(this.getAttribute("href"))
-            .scrollIntoView({
+        .scrollIntoView({
 
-                behavior: "smooth"
+            behavior:"smooth"
 
-            });
+        });
 
     });
 
 });
 
-// Current Year
+// ==============================
+// Footer Year
+// ==============================
+
 const footer = document.querySelector("footer p");
 
-if (footer) {
+if(footer){
 
-    footer.innerHTML =
-        `© ${new Date().getFullYear()} Abdelrahman Zaher`;
+footer.innerHTML=
+
+`© ${new Date().getFullYear()} Abdelrahman Zaher | Software Developer`;
 
 }
+
+// ==============================
+// Hover Animation
+// ==============================
+
+document.querySelectorAll(".card,.project,.item").forEach(card=>{
+
+card.addEventListener("mouseenter",()=>{
+
+card.style.transition=".35s";
+
+});
+
+});
+
+// ==============================
+// Image Hover Effect
+// ==============================
+
+document.querySelectorAll(".project img").forEach(img=>{
+
+img.addEventListener("mouseenter",()=>{
+
+img.style.transform="scale(1.05)";
+
+img.style.transition=".4s";
+
+});
+
+img.addEventListener("mouseleave",()=>{
+
+img.style.transform="scale(1)";
+
+});
+
+});
+
+// ==============================
+// Console Message
+// ==============================
+
+console.log("Portfolio Loaded Successfully 🚀");
