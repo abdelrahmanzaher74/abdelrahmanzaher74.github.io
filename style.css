@@ -296,5 +296,179 @@ margin:20px;
 .project p{
 min-height:90px;
 }
+  /* ===========================
+   Timeline Lists
+=========================== */
+
+.item ul{
+margin-top:15px;
+padding-left:20px;
+color:#cbd5e1;
+line-height:1.8;
+}
+
+.item li{
+margin-bottom:8px;
+}
+
+/* ===========================
+   Project Buttons
+=========================== */
+
+.project .btn{
+display:inline-block;
+margin:20px;
+}
+
+.project p{
+padding:0 20px;
+min-height:110px;
+}
+
+/* ===========================
+   Hidden Animation
+=========================== */
+
+.hidden{
+opacity:0;
+transform:translateY(50px);
+transition:all .8s ease;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* ===========================
+   Sticky Header
+=========================== */
+
+header.sticky{
+padding:15px 8%;
+background:#020617;
+box-shadow:0 5px 20px rgba(0,0,0,.4);
+}
+
+/* ===========================
+   Active Navbar
+=========================== */
+
+nav a.active{
+color:#38bdf8;
+}
+
+/* ===========================
+   Better Hover
+=========================== */
+
+.project{
+transition:.4s;
+}
+
+.project:hover{
+
+transform:
+translateY(-12px)
+scale(1.02);
+
+box-shadow:
+0 15px 35px
+rgba(59,130,246,.35);
+
+}
+
+.card{
+
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:
+translateY(-12px);
+
+box-shadow:
+0 10px 30px
+rgba(59,130,246,.35);
+
+}
+
+.item{
+
+transition:.4s;
+
+}
+
+.item:hover{
+
+transform:translateX(10px);
+
+}
+
+/* ===========================
+   Section Title
+=========================== */
+
+section h2{
+
+position:relative;
+display:inline-block;
+left:50%;
+transform:translateX(-50%);
+
+}
+
+section h2::after{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+transform:translateX(-50%);
+
+bottom:-10px;
+
+width:70px;
+
+height:4px;
+
+background:#3b82f6;
+
+border-radius:10px;
+
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#0f172a;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#3b82f6;
+border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#2563eb;
+
+}
 
 }
